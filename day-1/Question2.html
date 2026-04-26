@@ -1,0 +1,21 @@
+<!-- Error makes clever questoin-2.-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day -1 Project 4</title>
+ </head>
+ <body>
+    <button onclick="change()">Add</button>
+    <div id="new"></div>
+    <script>
+        function change() {
+            var neededTag = document.createElement("h1");
+            neededTag.textContent = "Hello";
+            var divelemt = document.getElementById("new");
+            divelemt.append(neededTag);
+        }
+    </script>
+ </body>
+ </html>

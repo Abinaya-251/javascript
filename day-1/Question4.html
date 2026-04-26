@@ -1,0 +1,21 @@
+<!--Error makes clever question-4.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = "new">Name</h1>
+    <button id="btn1" onclick="change(event)">Abinaya</button>
+    <button id="btn2" onclick="change(event)">Anitha</button>
+    <button id="btn3" onclick="change(event)">Radha</button>
+    <script>
+        var h1Elemt = document.getElementById("new");
+        function change(event) {
+            h1Elemt.textContent = event.target.textContent;
+        }
+    </script>
+</body>
+</html>

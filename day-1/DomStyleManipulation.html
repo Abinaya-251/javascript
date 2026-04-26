@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day -1 Project 2</title>
+</head>
+<body>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            transition: 2s;
+        }
+        .widthmax {
+            width: 900%;
+        }
+    </style>
+    <h1>DOM Style Manipulation</h1>
+    <div id="new">
+    </div>
+    <button onclick = "change()">Change</button>
+    <script>
+        var divele = document.getElementById("new");
+        function change() {
+            divele.style.backgroundColor = "blue";
+            divele.setAttribute("class", "widthmax");
+        }
+    </script>
+</body>
+</html>

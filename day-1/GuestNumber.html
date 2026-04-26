@@ -21,6 +21,7 @@
                 document.getElementById("score").innerHTML = "Congratulations! You guessed the number. Your score is " + score;
 
             } else {
+                score = score - 1;
                 document.getElementById("score").innerHTML = "Sorry! The correct number was " + randomnum + ". Try again! Your score is " + score;
             }
         }
