@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-1 Project</title>
+</head>
+
+<body>
+    <h1>Guess the Number</h1>
+    <input type="number" id="num1" min="1" max="10"/>
+    <button onclick="guessnumber()">Guess</button>
+    <p id="score">Your score is 0</p>
+    <script>
+        var score = 0;
+        function guessnumber() {
+            var enterednum = document.getElementById("num1").value;
+            var randomnum = Math.floor(Math.random() * 10) + 1;
+            if (enterednum == randomnum) {
+                score = score + 1;
+                document.getElementById("score").innerHTML = "Congratulations! You guessed the number. Your score is " + score;
+
+            } else {
+                document.getElementById("score").innerHTML = "Sorry! The correct number was " + randomnum + ". Try again! Your score is " + score;
+            }
+        }
+    </script>
+</body>
+</html>
