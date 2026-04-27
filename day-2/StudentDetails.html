@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #e6e6e6;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        /* FORM BOX */
+        .form-container {
+            display: inline-block;
+            border: 2px solid #999;
+            padding: 10px;
+            background-color: #f2f2f2;
+        }
+
+        .form-table {
+            border-collapse: collapse;
+        }
+
+        .form-table td {
+            border: 2px solid #999;
+            padding: 4px;
+        }
+
+        .form-table label {
+            font-weight: bold;
+        }
+
+        .form-table input,
+        .form-table select {
+            width: 180px;
+            padding: 4px;
+        }
+
+        /* SAVE BUTTON */
+        .save-btn {
+            width: 100%;
+            background-color: #76c7a8;
+            border: 1px solid #555;
+            padding: 6px;
+            cursor: pointer;
+        }
+
+        /* TABLE */
+        table.data-table {
+            margin: 30px auto;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        table.data-table th {
+            background-color: #d9d9d9;
+        }
+
+        table.data-table th,
+        table.data-table td {
+            border: 1px solid black;
+            padding: 8px 12px;
+        }
+
+        /* DELETE BUTTON */
+        .delete-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>STUDENT FORM</h2>
+
+<div class="form-container">
+<form id="studentForm" onsubmit="saveStudent(event)">
+    <table class="form-table">
+        <tr>
+            <td><label>Name</label></td>
+            <td><input type="text" id="name" required></td>
+        </tr>
+
+        <tr>
+            <td><label>Age</label></td>
+            <td><input type="number" id="age" required></td>
+        </tr>
+
+        <tr>
+            <td><label>Gender</label></td>
+            <td>
+                <input type="radio" name="gender" value="Male" required> Male
+                <input type="radio" name="gender" value="Female"> Female
+            </td>
+        </tr>
+
+        <tr>
+            <td><label>Course</label></td>
+            <td>
+                <select id="course">
+                    <option>JavaScript</option>
+                    <option>Python</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td><label>Email</label></td>
+            <td><input type="email" id="email" required></td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <button type="submit" class="save-btn">Save</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>COURSE</th>
+            <th>GENDER</th>
+            <th>EMAIL</th>
+            <th>ACTION</th>
+        </tr>
+    </thead>
+
+    <tbody id="tableBody"></tbody>
+</table>
+
+<script>
+function saveStudent(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let age = document.getElementById("age").value;
+    let course = document.getElementById("course").value;
+    let email = document.getElementById("email").value;
+    let gender = document.querySelector('input[name="gender"]:checked').value;
+
+    let row = document.createElement("tr");
+
+    row.innerHTML = `
+        <td>${name}</td>
+        <td>${age}</td>
+        <td>${course}</td>
+        <td>${gender}</td>
+        <td>${email}</td>
+        <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    `;
+
+    document.getElementById("tableBody").appendChild(row);
+    document.getElementById("studentForm").reset();
+}
+
+function deleteRow(btn) {
+    btn.closest("tr").remove();
+}
+</script>
+
+</body>
+</html>
