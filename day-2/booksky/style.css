@@ -39,12 +39,17 @@ body {
 }
 
 .container {
-    display: inline-block;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.book-card {
     width: 40%;
+    display: inline-block;
     background-color: black;
     color: white;
-    position: absolute;
-    left: 10px;
+    margin-left: 10px; 
+    margin-top: 10px;
     border-radius: 20px;
     padding: 20px;
 }
@@ -56,7 +61,7 @@ body {
             width: 100%;
             height: 100%;
             background-color: black;
-        display: block;
+        display: none;
         z-index: 1;
             }
 
@@ -66,7 +71,7 @@ body {
                 position: absolute;
                 background-color: white;
                 color: black;
-                display: block;
+                display: none;
                 width: 50%;
                 top: 20px;
                 /* padding: 40px; */
@@ -81,5 +86,17 @@ body {
         .popup textarea {
             display: flex;
             width: 90%;
+            margin: 5px;
+        }
+        .submit-btn {
+            background-color: black;
+            color: white;
+            border-radius: 20px;
+            margin: 5px;
+        }
+        .close-btn {
+            background-color: black;
+            color: white;
+            border-radius: 20px;
             margin: 5px;
         }
