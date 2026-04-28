@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Words Calculator</title>
+    <style>
+        body {
+            background-color: rgb(245, 232, 211);
+        }
+        .container {
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            left: 30%;
+            top: 30%;
+            right: 30%;
+            bottom: 30%;
+            background-color: darkblue;
+            border-radius: 10px;
+            height: 50%;
+        } 
+        .calculate-btn {
+            background-color: white;
+            colour: black;
+            border-radius: 5px;
+            height: 40px;
+
+        }
+
+        .textarea {
+            width: 80%;
+            height: 100px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3 style="color:bisque">Type a sentence</h3>
+        <textarea class="textarea"></textarea>
+        <br></br>
+        <button class="calculate-btn">Calculate Words</button>
+        <p id="result" style="color:azure"></p>
+    </div>
+    <script>
+        var btn = document.querySelector('.calculate-btn');
+        btn.addEventListener('click', function() {
+            var txtarea = document.querySelector('.textarea');
+            var text = txtarea.value;
+            var words = text.trim().split(" ");
+            console.log(words);
+            var wordCount = words.length;
+            var result = document.getElementById('result');
+            result.textContent = wordCount + " words";
+        })
+    </script>
+
+</body>
+</html>
